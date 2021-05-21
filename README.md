@@ -1,4 +1,4 @@
-<img src="./src/assets/react.svg" alt="IDaniel" width="80">
+<img src="./src/assets/react.svg" alt="IDaniel" width="160">
 
 > React Webpack 5
 
