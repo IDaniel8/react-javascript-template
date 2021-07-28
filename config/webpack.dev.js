@@ -23,6 +23,7 @@ const devConfig = {
           options: {
             plugins: [
               '@babel/plugin-transform-runtime',
+              'react-hot-loader/babel',
               [
                 'babel-plugin-styled-components',
                 {
