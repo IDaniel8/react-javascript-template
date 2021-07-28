@@ -63,6 +63,16 @@
     "not dead"
   ],
   "lint-staged": {
-    "*.js": "eslint --cache --fix"
+    "**/*.{js,jsx}": [
+      "yarn lint --fix"
+    ],
+    "**/*.{js,.jsx,json,md}": [
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
