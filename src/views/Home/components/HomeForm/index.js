@@ -1,1 +1,1 @@
-export * from "./HomeForm";
+export * from './HomeForm'

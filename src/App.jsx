@@ -1,5 +1,5 @@
-import { Provider } from 'react-redux'
 import { hot } from 'react-hot-loader/root'
+import { Provider } from 'react-redux'
 import { Route, BrowserRouter as Router, Switch, Redirect } from 'react-router-dom'
 import { GlobalStyle } from '@theme'
 import store from './store'

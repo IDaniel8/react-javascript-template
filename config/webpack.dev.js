@@ -1,31 +1,30 @@
-const path = require("path");
-const { HotModuleReplacementPlugin } = require("webpack");
-const { default: merge } = require("webpack-merge");
-const common = require("./webpack.common");
+const path = require('path')
+const { HotModuleReplacementPlugin } = require('webpack')
+const { default: merge } = require('webpack-merge')
+const common = require('./webpack.common')
 
 /** @type {import('webpack').Configuration} */
 const devConfig = {
-  mode: "development",
-  devtool: "eval-source-map",
+  mode: 'development',
+  devtool: 'eval-source-map',
   devServer: {
     port: 3000,
     hot: true,
     historyApiFallback: true,
     static: {
-      directory: path.resolve(__dirname, "../bundle"),
+      directory: path.resolve(__dirname, '../bundle'),
     },
   },
   module: {
     rules: [
       {
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
             plugins: [
-              "@babel/plugin-transform-runtime",
-              "react-hot-loader/babel",
+              '@babel/plugin-transform-runtime',
               [
-                "babel-plugin-styled-components",
+                'babel-plugin-styled-components',
                 {
                   pure: true,
                   fileName: true,
@@ -35,19 +34,19 @@ const devConfig = {
             ],
             presets: [
               [
-                "@babel/preset-env",
+                '@babel/preset-env',
                 {
                   corejs: 3,
-                  useBuiltIns: "usage",
+                  useBuiltIns: 'usage',
                   targets: {
-                    browsers: ["> 0.25%", "not dead"],
+                    browsers: ['> 0.25%', 'not dead'],
                   },
                 },
               ],
               [
-                "@babel/preset-react",
+                '@babel/preset-react',
                 {
-                  runtime: "automatic",
+                  runtime: 'automatic',
                 },
               ],
             ],
@@ -57,12 +56,12 @@ const devConfig = {
         exclude: /node_modules|@babel(?:\/|\\{1,2})runtime|core-js/,
       },
       {
-        use: ["style-loader", "css-loader", "sass-loader"],
+        use: ['style-loader', 'css-loader', 'sass-loader'],
         test: /.(css|sass|scss)$/,
       },
     ],
   },
   plugins: [new HotModuleReplacementPlugin()],
-};
+}
 
-module.exports = merge(common, devConfig);
+module.exports = merge(common, devConfig)
