@@ -69,10 +69,5 @@
     "**/*.{js,.jsx,json,md}": [
       "prettier --write"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   }
 }
